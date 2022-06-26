@@ -19,7 +19,7 @@ function SignIn() {
     dispatch(login(user));
     setTimeout(() => {
       navigate("/");
-    }, 1000);
+    }, 2000);
   };
   return (
     <>
