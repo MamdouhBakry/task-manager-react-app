@@ -1,0 +1,16 @@
+.App {
+  background-color:rgb(223, 230, 235);
+  height:100vh;
+  overflow-x: hidden;
+  // overflow-y: hidden;
+  font-size: 18px;
+}
+
+.react-datetime-picker__wrapper {
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border: thin solid rgb(222, 226, 230) !important;
+  padding: 5px 10px;
+  border-radius: 4px;
+}

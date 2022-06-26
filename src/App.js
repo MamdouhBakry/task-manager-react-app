@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import './App.scss';
+import { Routes, Route } from "react-router-dom";
+import PrivateRoute from './HOC/PrivateRoute';
+import HomePage from './Pages/HomePage/HomePage';
+import SigninPage from './Pages/SigninPage/SigninPage';
+import SignupPage from './Pages/SignupPage/SignupPage';
+import { useSelector, useDispatch } from "react-redux";
 function App() {
+  let auth = useSelector((state) => state.user);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Routes>
+        <Route exact element={<PrivateRoute />}>
+          <Route path="/" exact element={<HomePage />} />
+        </Route>
+        <Route path="/signin" exact element={<SigninPage />} />
+        <Route path="/signup" exact element={<SignupPage />} />
+      </Routes>
+    </div >
   );
 }
 
